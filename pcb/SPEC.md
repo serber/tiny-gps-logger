@@ -1,6 +1,6 @@
 # Tiny GPS Logger — PCB specification
 
-Status: **schematic drafted, awaiting review.** PCB layout has not started. Decisions are in section 8, schematic details in section 9. Process records are in [DESIGN-RECORD.md](DESIGN-RECORD.md).
+Status: **revision 1 released for prototype manufacture, not built yet.** Files are in [release/rev1](release/rev1/README.md). Decisions are in section 8, schematic details in section 9. Process records are in [DESIGN-RECORD.md](DESIGN-RECORD.md).
 
 EDA: EasyEDA Pro, project `Tiny GPS Logger` (Board1 / Schematic1 / PCB1).
 

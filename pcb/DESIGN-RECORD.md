@@ -13,7 +13,7 @@ Process: `power-pcb-design` skill (`~/.codex/skills/power-pcb-design`), adopted 
 | 5 Design rules and stack-up | 2026-11-05 | Approved | 1.6 mm stack accepted |
 | 6 Placement | 2026-11-05 | Gate waived; revised at the user's request | User: "решай сам, я все одобряю" (decide yourself, I approve everything). The user then asked to move the microSD slot to the bottom and to spread the top side |
 | 7–8 Routing, verification | 2026-11-05 | Gates waived on the same basis | Agent chose the routing mode; decisions and evidence are below |
-| 9 Delivery | — | Stops before sharing or ordering | Ordering always needs explicit permission |
+| 9 Delivery | 2026-11-05 | Released locally at the user's request | Files are in `release/rev1`; prototype only. Not committed, shared or ordered. Ordering always needs explicit permission |
 
 Steps 1–4 were run before this process was adopted, so their gates were not held in order. They need retroactive approval.
 
