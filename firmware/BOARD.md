@@ -1,6 +1,6 @@
 # Board reference for firmware
 
-What the firmware needs to know about the PCB. Pin numbers and nets were read from the EasyEDA board. Function assignments come from `pcb/SPEC.md` section 9.1, checked against ST DS12469. CubeMX was not used, so confirm alternate functions there when the project is created. Nothing here has been measured on hardware yet.
+What the firmware needs to know about the PCB. Pin numbers and nets were read from the EasyEDA board. Function assignments come from `docs/SPEC.md` section 9.1, checked against ST DS12469. CubeMX was not used, so confirm alternate functions there when the project is created. Nothing here has been measured on hardware yet.
 
 ## MCU
 

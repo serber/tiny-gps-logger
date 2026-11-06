@@ -7,15 +7,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Tiny battery-powered GPS logger. The project has two parts:
 
 - **PCB:** a 46 × 28 mm, 4-layer board with a u-blox MAX-M10S, an STM32L412KBU6 and microSD. Everything in this repository so far belongs to this part.
-- **Firmware:** not started. It will create a new CSV on each start and append a position about every second. There is nothing to build, lint or test until it exists. `pcb/SPEC.md` sections 5 and 9.1 list what the hardware requires of it.
+- **Firmware:** not started. It will create a new CSV on each start and append a position about every second. There is nothing to build, lint or test until it exists. `docs/SPEC.md` sections 5 and 9.1 list what the hardware requires of it.
 
 ## Where things live
 
-The PCB design itself is in EasyEDA Pro, not in git: project `Tiny GPS Logger` (Board1 / Schematic1 with pages POWER, MCU, GNSS_SD / PCB1). The `pcb/` folder holds only its records:
+The PCB design itself is in EasyEDA Pro, not in git: project `Tiny GPS Logger` (Board1 / Schematic1 with pages POWER, MCU, GNSS_SD / PCB1). The `docs/` and `release/` folders hold only its records:
 
-- `pcb/SPEC.md`: requirements, decisions and the MCU pin map (section 9.1). Its parts table is an early key-parts list.
-- `pcb/DESIGN-RECORD.md`: gate log, audits, rules, step 6–8 decisions and evidence, and open items before ordering.
-- `pcb/BOM.md`: full parts list, read from the PCB.
+- `docs/SPEC.md`: requirements, decisions and the MCU pin map (section 9.1). Its parts table is an early key-parts list.
+- `docs/DESIGN-RECORD.md`: gate log, audits, rules, step 6–8 decisions and evidence, and open items before ordering.
+- `release/rev1/BOM.md`: full parts list, read from the PCB.
 
 `firmware/BOARD.md` is the board reference for firmware: pins, GPS, microSD, power sensing and programming. Update it if a board change touches any of these.
 
@@ -24,8 +24,8 @@ When a record and the CAD disagree, read the CAD. Update the records after any b
 ## Working rules
 
 - Reply in Russian. Write all files and EasyEDA content in English.
-- Follow the gated process in `~/.codex/skills/power-pcb-design/SKILL.md`, which does not appear in the Claude Code skill list. Log gate decisions in `pcb/DESIGN-RECORD.md`.
-- Never order, upload to a fabricator or publish without explicit permission. Commit only when asked. `pcb/` is not committed yet.
+- Follow the gated process in `~/.codex/skills/power-pcb-design/SKILL.md`, which does not appear in the Claude Code skill list. Log gate decisions in `docs/DESIGN-RECORD.md`.
+- Never order, upload to a fabricator or publish without explicit permission. Commit only when asked.
 - Edit EasyEDA pages in place. Never wipe and redraw them.
 - State what was calculated, checked in CAD or measured. Nothing on this board has been measured yet.
 
