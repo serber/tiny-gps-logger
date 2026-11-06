@@ -1,12 +1,12 @@
 # Board reference for firmware
 
-What the firmware needs to know about the PCB. Pin numbers and nets were read from the EasyEDA board. Function assignments come from `docs/SPEC.md` section 9.1, checked against ST DS12469. CubeMX was not used, so confirm alternate functions there when the project is created. Nothing here has been measured on hardware yet.
+What the firmware needs to know about the PCB. Pin numbers and nets were read from the EasyEDA board. Function assignments come from `docs/SPEC.md` section 9.1, checked against ST DS12469 and against the STM32CubeMX 6.18.1 pin database (`STM32L412KBUx.xml`): positions and functions of all 18 used pins match. VBAT_SENSE is ADC1_IN5 and VBUS_SENSE is ADC1_IN6. Nothing here has been measured on hardware yet.
 
 ## MCU
 
 STM32L412KBU6, UFQFPN-32: 128 KB Flash, 40 KB RAM. Supply is 3.3 V on all rails.
 
-No crystals are fitted. Use the internal oscillators, HSI48 with CRS for USB. Time of day comes from GPS.
+No crystals are fitted. The firmware runs from HSI16. HSI48 with CRS is only for the system bootloader, because the application does not use USB. Time of day comes from GPS.
 
 ## Pin map
 
@@ -38,7 +38,7 @@ Unconnected: PC14, PC15, PA2, PA3, PA9, PA10, PA15, PB5. Set them to analog mode
 
 ## GPS: MAX-M10S
 
-- UART default is 9600 8N1. Configure the module on every start. Planned output is UBX-NAV-PVT at 1 Hz, received with DMA.
+- UART default is 9600 8N1. Configure the module on every start. Planned output is UBX-NAV-PVT and UBX-NAV-DOP at 1 Hz, received with DMA.
 - GPS_RESET has no capacitor. Do not hold it low for normal operation.
 - Do not pull GPS_TP low at startup: a low TIMEPULSE makes the module enter safeboot. Leave PA8 without a pull-down.
 - SAFEBOOT_N goes only to J5 pin 7.
@@ -58,7 +58,7 @@ Unconnected: PC14, PC15, PA2, PA3, PA9, PA10, PA15, PB5. Set them to analog mode
 - **VBUS_SENSE:** R8 and R9 are 10 kΩ. About 2.5 V on the pin means USB is present.
 - **SW1 off with USB connected:** the board still runs, and VBAT_SENSE reads 0. With SW1 on it reads the battery. Firmware can tell the two states apart.
 - **Battery cut-off:** 3V3 stops being regulated below about 3.56 V at peak load, by calculation, and follows the battery. The ADC reference falls with it, so read VREFINT to correct the measurement.
-- **Low battery:** close the file and sleep well above 3.0 V. The threshold is not chosen yet.
+- **Low battery:** close the file and sleep well above 3.0 V. The firmware uses 3.30 V, a working estimate to confirm with a discharge test.
 - **Power loss:** SW1 cuts power without warning, so use `f_sync` every few seconds. Extra capacitance on the board does not help.
 - **Charging:** runs by itself through MCP73831 at 50 mA. The red LED D2 is driven by the charger. Firmware has no connection to it.
 

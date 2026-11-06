@@ -155,7 +155,7 @@ Fabrication order text:
 
 A detailed firmware specification will be separate.
 
-- GPS: UBX-NAV-PVT at 1 Hz, UART with DMA. Configuration is sent on every start.
+- GPS: UBX-NAV-PVT and UBX-NAV-DOP at 1 Hz, UART with DMA. Configuration is sent on every start.
 - Files: `LOG00001.CSV`, `LOG00002.CSV`, … A counter is used because GPS time is unknown at startup.
 - Columns: `utc_time, lat, lon, alt_m, speed_mps, course_deg, sats, hdop, fix_type`.
 - Buffered writes with `f_sync` every few seconds.
@@ -225,7 +225,7 @@ Three A4 pages in `Schematic1`: POWER, MCU and GNSS_SD. 58 components, 43 nets; 
 | PB7 | GPS_TXD | USART1_RX from GPS |
 | PH3 | BOOT0 | 10 kΩ pull-down |
 
-Pins and functions verified against ST DS12469 Rev 9, table 14. Pin 17 is VDD. CubeMX was not used.
+Pins and functions verified against ST DS12469 Rev 9, table 14, and against the STM32CubeMX 6.18.1 pin database. Pin 17 is VDD.
 
 ### 9.2. Findings that changed the design
 
