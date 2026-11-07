@@ -14,6 +14,8 @@ Process: `power-pcb-design` skill (`~/.codex/skills/power-pcb-design`), adopted 
 | 6 Placement | 2026-11-05 | Gate waived; revised at the user's request | User: "решай сам, я все одобряю" (decide yourself, I approve everything). The user then asked to move the microSD slot to the bottom and to spread the top side |
 | 7–8 Routing, verification | 2026-11-05 | Gates waived on the same basis | Agent chose the routing mode; decisions and evidence are below |
 | 9 Delivery | 2026-11-05 | Released locally at the user's request | Files are in `release/rev1`; prototype only. Not committed, shared or ordered. Ordering always needs explicit permission |
+| 9 Delivery, repeated | 2026-11-07 | Released locally at the user's request | `release/rev1` exported again after the revision of 2026-11-07. Prototype only. Not committed, shared or ordered |
+| Small revision: J3 and L1 clearance | 2026-11-07 | Approved by the user | User proposed moving R12 and D1 down, J3 down and rotating L1, then asked to move D3 away from J5 and to spread C16, C17, R13 and D3, then C5, C14 and C8 to the left. Details in "Revision of 2026-11-07" |
 
 Steps 1–4 were run before this process was adopted, so their gates were not held in order. They need retroactive approval.
 
@@ -251,7 +253,7 @@ Ground: 45 vias, of which 4 are in the U2 pad. GND pours on all four layers (GND
 | VBUS at 0.15 mm | 0.9 mm in total | Same, near R4 and a ground via |
 | 3V3 passes through J5 pin 1 | Top to L3 | Plated hole, present with or without the header fitted |
 | Seven signal vias under the J4 outline | x = 13.6–13.7 mm, plus LDO_EN at (8.3, 10.95) | Tented; check against the slot underside before ordering |
-| No stitching vias along RF_IN | 1.8 mm line | Far shorter than λ/20 (about 9.5 mm); no room within pad-to-via rules. Nearest ground vias are 1.1 and 1.9 mm away |
+| No stitching vias along RF_IN | 2.7 mm line since the revision of 2026-11-07 (was 1.8 mm) | Far shorter than λ/20 (about 9.5 mm); no room within pad-to-via rules. Nearest ground vias are 1.1 and 1.3 mm away |
 
 API note: a track created through the API links only to a via that already exists. Create vias first, or DRC reports those nets as disconnected.
 
@@ -361,6 +363,52 @@ All values are calculated, not measured. Cell and protection resistance is assum
 
 The real SD peak, the LP502030-PCM discharge limit and its protection trip current are still unverified.
 
+### Revision of 2026-11-07
+
+J3 and L1 stood too close: the L1 outline overlapped the J3 silkscreen and the copper gap was 0.44 mm. D3 overlapped the J5 outline by 0.05 mm. The outlines of C16 and C17 overlapped by 0.13 mm, C17 and R13 stood 0.02 mm apart, and C16 overlapped C15 by 0.15 mm. C5, C14 and C8 overlapped each other by 0.03 mm.
+
+| Item | Before | After |
+|---|---|---|
+| J3 | (42.9, 18.2) | (42.9, 17.2), the 1.0 mm limit is the 0.20 mm RF clearance to the GND via at (41.185, 16.289) |
+| L1 | (41.85, 20.5), vertical | (42.7, 20.1), rotation 180, horizontal |
+| R12 | (42.5, 13.9) | (42.5, 12.4) |
+| D1 | (44.6, 12.4) | (44.6, 10.9) |
+| C16 | (31.0, 15.0) | (31.3, 15.0) |
+| C17 | (33.9, 15.0) | (34.5, 14.95) |
+| R13 | (36.9, 14.7) | (37.65, 14.7) |
+| D3 | (39.1, 14.2) | (40.0, 14.2) |
+| LED_STATUS via | (39.9, 14.65) | (41.1, 14.55), with a 1.2 mm Bottom extension |
+| V_BCKP via | (35.35, 15.55) | (35.175, 15.725), on the same L3 diagonal; 0.2 mm below the 3V3 track and clear of the C17 pad by 0.025 mm |
+| GND via at C16 | (30.7, 15.7) | (30.3, 15.75) |
+| C5 | (20.3, 26.2) | (19.8, 26.2), 0.5 mm further from the U2 PA0 pin |
+| C14 | (23.3, 26.2) | (23.05, 26.2) |
+| GND via at C5 | (20.0, 26.9) | (19.5, 26.9) |
+| GND vias at J3 and D1 | (44.25, 15.6), (44.79, 20.63), (45.35, 11.85) | (44.25, 14.6), (44.79, 19.63), (45.35, 10.35) |
+| J3_NO_POUR | y 17.2–19.2 mm | y 16.2–18.2 mm |
+| RF_IN, U1 to J3, along the track | 1.84 mm | 2.67 mm, with a bend at the L1 branch |
+| RF_IN branch to L1 pad centre | 1.75 mm | 2.02 mm |
+
+Results, read from CAD:
+
+| Check | Before | After |
+|---|---|---|
+| L1 to J3, copper | 0.44 mm | 0.63 mm |
+| L1 to J3, footprint outline | Overlap | 0.25 mm |
+| L1 to R14, footprint outline | About 0.2 mm | 1.0 mm |
+| D3 to J5, footprint outline | Overlap 0.05 mm | 0.85 mm |
+| C15 to C16, footprint outline | Overlap 0.15 mm | 0.15 mm |
+| C16 to C17, footprint outline | Overlap 0.13 mm | 0.17 mm |
+| C17 to R13, footprint outline | 0.02 mm | 0.17 mm |
+| R13 to D3, footprint outline | 0.43 mm | 0.18 mm |
+| C5 to C14, footprint outline | Overlap 0.03 mm | 0.22 mm |
+| C14 to C8, footprint outline | Overlap 0.03 mm | 0.22 mm |
+
+DRC after rebuilding all four GND pours: 0 errors. Pad nets of J3, L1, R12, D1, D3, C16, C17, R13, C5 and C14 read back unchanged; 58 parts and 93 vias. The 3V3, V_BCKP, BCKP_CHG, LED_STATUS, VBAT_SENSE and NRST tracks around these parts were reworked locally. The resistance and decoupling distance figures in step 8 were not recalculated. The designators of J3 and L1 were moved so they do not land on pads. The RF effect is an estimate only: the longer line and branch are short against the wavelength, and nothing was measured or simulated.
+
+Check before the export of 2026-11-07, after the user moved designators by hand: DRC 0 errors after rebuilding all four pours; the placement file differs from the previous export only for J3, L1, R12, D1, D3, C16, C17, R13, C5 and C14; no designator box lies on a pad or outside the board. The BOM file is byte-identical to the previous export.
+
+Moving a via through the API rounded its drill from 0.30 mm to 11.8 mil (0.29972 mm), which added a drill tool. The seven moved vias were set back to 0.30 mm. The via drill file still lists two tools, both printed as 0.30000 mm.
+
 ### Open items before ordering
 
 - All open audit items from step 4 still apply.
@@ -368,7 +416,6 @@ The real SD peak, the LP502030-PCM discharge limit and its protection trip curre
 - Measure the J4 Cd switch sense and the SW1 ON direction on the first board.
 - J4 on the bottom: confirm the enclosure and the battery position leave room for the 2 mm slot and for card access.
 - J4 is soldered on the second side, by hand, after the top side.
-- The L1 silkscreen outline crosses J3 and R14 and reaches a U1 pad. L1 and R14 are not fitted in the first build, so this affects only the printed outline; JLC clips silkscreen from pads.
 - Review the design, including the custom-routed copper, with the fabricator's DFM check.
 
 ## Battery

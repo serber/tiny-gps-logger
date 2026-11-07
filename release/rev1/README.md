@@ -1,6 +1,6 @@
 # Release rev1
 
-Prototype release, exported from EasyEDA Pro 3.2.209 on 2026-11-05. **Not validated and not ordered.** It has not been built or measured.
+Prototype release, exported from EasyEDA Pro 3.2.209 on 2026-11-07. **Not validated and not ordered.** It has not been built or measured.
 
 | File | Content |
 |---|---|
@@ -9,7 +9,7 @@ Prototype release, exported from EasyEDA Pro 3.2.209 on 2026-11-05. **Not valida
 | `bom-rev1.csv` | EasyEDA BOM export, 55 fitted parts in 30 lines, UTF-16 |
 | `placement-rev1.csv` | Part positions, all 58 parts, UTF-16 |
 | `SHA256SUMS` | Checksums |
-| `assembly-rev1.step` | 3D assembly, 30 MB, kept local and not in git; export it again from EasyEDA if missing |
+| `assembly-rev1.step` | 3D assembly, 30 MB, not in git and not exported again on 2026-11-07; export it from EasyEDA when needed |
 
 L1, R14, and C18 are not fitted. They are absent from the BOM but present in the placement file, so remove them if a fabricator assembles the board.
 
@@ -19,7 +19,7 @@ The order instruction is in the [root README](../../README.md#ordering).
 
 - DRC on the saved PCB: 0 errors, immediately before export.
 - Drill: 93 vias, 7 J5 holes, 4 plated J2 slots, 6 non-plated holes.
-- Top mask opening at the new BT1 position, and no Top copper points inside the J3 keep-out.
+- Top mask openings at the new J3, L1, D3 and R12 positions, and no Top copper points inside the J3 keep-out at x 42.5–44.9, y 16.2–18.2 mm.
 - BOM holds D4 as C699105. J4 is the only bottom-side part in the placement file.
 
 ## Not verified

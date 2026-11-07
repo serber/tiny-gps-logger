@@ -2,9 +2,9 @@
 
 A tiny battery-powered GPS logger. It creates a new CSV file on microSD at each start and writes the position about once a second.
 
-![Board, top side](docs/images/board-top.png)
+![Board, general view](docs/images/board-iso.png)
 
-*Render of the 3D model, not a photo. Copper is not shown.*
+*EasyEDA 3D renders, not photos. The board has not been built.*
 
 - 46 × 28 mm, 4-layer board
 - u-blox MAX-M10S GNSS module, U.FL antenna connector
@@ -18,6 +18,8 @@ A tiny battery-powered GPS logger. It creates a new CSV file on microSD at each 
 |---|---|
 | PCB | Designed in EasyEDA Pro, not yet manufactured |
 | Firmware | Alpha: builds and passes host tests, not yet run on hardware |
+
+![Board, top side](docs/images/board-top.png)
 
 ![Board, bottom side](docs/images/board-bottom.png)
 
