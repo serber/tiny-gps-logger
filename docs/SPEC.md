@@ -131,7 +131,7 @@ Peaks: 200–250 mA at startup (GPS plus SD initialisation).
 
 ### 4.6. Antenna and RF
 
-- U.FL → RF_IN line: 50 Ω, coplanar with ground on layer 2, shortest possible length. The routed line is 1.8 mm, so it has no stitching vias along it (see DESIGN-RECORD.md, step 7).
+- U.FL → RF_IN line: 50 Ω, coplanar with ground on layer 2, shortest possible length. The routed line is 2.7 mm, so it has no stitching vias along it (see DESIGN-RECORD.md, step 7).
 - Solid ground under the module on Top and layer 2, no signals there.
 - Keep U.FL close to the module, away from the SD card and SPI clock.
 - Active antenna bias-T per the u-blox reference design: VCC_RF → 10 Ω → 27 nH → RF, plus 10 nF to ground. Fitted footprints, not populated by default.
@@ -147,7 +147,7 @@ Fabrication order text:
 5PCS, 4 LAYERS, FR4, 1.6MM, OUTER 1OZ, INNER 0.5OZ, STACKUP JLC04161H-3313, NO IMPEDANCE CONTROL, Purple Soldermask, White Legend, ENIG, TENTED VIAS, order number will be added
 ```
 
-- Stack-up: the RF line width is calculated for this stack, so it must be stated even though the RF line is too short (1.8 mm) to need paid impedance control. Other fabricators need the build instead of the JLC code: L1–L2 and L3–L4 prepreg 0.0994 mm, εr 4.1, core 1.265 mm.
+- Stack-up: the RF line width is calculated for this stack, so it must be stated even though the RF line is too short (2.7 mm) to need paid impedance control. Other fabricators need the build instead of the JLC code: L1–L2 and L3–L4 prepreg 0.0994 mm, εr 4.1, core 1.265 mm.
 - ENIG: U2 has 0.5 mm pitch and U1 and J3 need flat pads. HASL is cheaper and possible, but it is uneven at this pitch.
 - The drill files contain plated slots for J2 and non-plated holes for J2, J4 and SW1.
 
