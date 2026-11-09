@@ -1,6 +1,6 @@
 # Release rev1
 
-Prototype release, exported from EasyEDA Pro 3.2.209 on 2026-11-07. **Not validated and not ordered.** It has not been built or measured.
+Prototype release, exported from EasyEDA Pro 3.2.209 on 2026-11-07. BOM and placement files exported again on 2026-11-09 after the passives change; the Gerbers are unchanged. **Not validated and not ordered.** It has not been built or measured.
 
 | File | Content |
 |---|---|
@@ -28,4 +28,5 @@ The order instruction is in the [root README](../../README.md#ordering).
 - The fabricator's DFM check has not been run.
 - Fit with the enclosure and the battery has not been checked.
 - LCSC stock and prices have not been checked.
+- The `Device` column of `placement-rev1.csv` names the old library device for the 27 passives changed on 2026-11-09; use the BOM.
 - See "Open items before ordering" and "Check on the first board" in [`docs/DESIGN-RECORD.md`](../../docs/DESIGN-RECORD.md) and [`firmware/BOARD.md`](../../firmware/BOARD.md).

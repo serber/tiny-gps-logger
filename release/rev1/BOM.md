@@ -36,21 +36,21 @@ Parts fitted on the board, grouped by part type. Generated from `bom-rev1.csv`, 
 | C1, C4, C12, C16 | 4 | 1uF | `CL10A105KB8NNNC` | SAMSUNG | C0603 | [C15849](https://www.lcsc.com/product-detail/C15849.html) |
 | C2, C6, C7, C11 | 4 | 4.7uF | `CL10A475KO8NNNC` | SAMSUNG | C0603 | [C19666](https://www.lcsc.com/product-detail/C19666.html) |
 | C3 | 1 | 47uF | `CL21A476MQYNNNE` | SAMSUNG | C0805 | [C16780](https://www.lcsc.com/product-detail/C16780.html) |
-| C5, C8, C9, C10, C13, C14, C15, C17, C20 | 9 | 100nF | `CC0603KRX7R9BB104` | YAGEO | C0603 | [C14663](https://www.lcsc.com/product-detail/C14663.html) |
+| C5, C8, C9, C10, C13, C14, C15, C17, C20 | 9 | 100nF | `CL10B104KB8NNNC` | SAMSUNG | C0603 | [C1591](https://www.lcsc.com/product-detail/C1591.html) |
 | C19 | 1 | 10uF | `CL10A106KP8NNNC` | SAMSUNG | C0603 | [C19702](https://www.lcsc.com/product-detail/C19702.html) |
 
 ## Resistors
 
 | Refs | Qty | Value | Part | Manufacturer | Package | LCSC |
 |---|---|---|---|---|---|---|
-| R1 | 1 | 100kΩ | `0603WAF1003T5E` | UNI-ROYAL | R0603 | [C25803](https://www.lcsc.com/product-detail/C25803.html) |
-| R2, R3 | 2 | 220kΩ | `0603WAF2203T5E` | UNI-ROYAL | R0603 | [C22961](https://www.lcsc.com/product-detail/C22961.html) |
-| R4, R5 | 2 | 5.1kΩ | `0603WAF5101T5E` | UNI-ROYAL | R0603 | [C23186](https://www.lcsc.com/product-detail/C23186.html) |
-| R6 | 1 | 20kΩ | `0603WAF2002T5E` | UNI-ROYAL | R0603 | [C4184](https://www.lcsc.com/product-detail/C4184.html) |
-| R7, R12, R13 | 3 | 1kΩ | `0603WAF1001T5E` | UNI-ROYAL | R0603 | [C21190](https://www.lcsc.com/product-detail/C21190.html) |
+| R1 | 1 | 100kΩ | `RC0603FR-07100KL` | YAGEO | R0603 | [C14675](https://www.lcsc.com/product-detail/C14675.html) |
+| R2, R3 | 2 | 220kΩ | `RC0603FR-07220KL` | YAGEO | R0603 | [C123420](https://www.lcsc.com/product-detail/C123420.html) |
+| R4, R5 | 2 | 5.1kΩ | `RC0603FR-075K1L` | YAGEO | R0603 | [C105580](https://www.lcsc.com/product-detail/C105580.html) |
+| R6 | 1 | 20kΩ | `RC0603FR-0720KL` | YAGEO | R0603 | [C105575](https://www.lcsc.com/product-detail/C105575.html) |
+| R7, R12, R13 | 3 | 1kΩ | `RC0603FR-071KL` | YAGEO | R0603 | [C22548](https://www.lcsc.com/product-detail/C22548.html) |
 | R8, R9, R10 | 3 | 10kΩ | `RC0603FR-0710KL` | YAGEO | R0603 | [C98220](https://www.lcsc.com/product-detail/C98220.html) |
-| R11 | 1 | 33Ω | `0603WAF330JT5E` | UNI-ROYAL | R0603 | [C23140](https://www.lcsc.com/product-detail/C23140.html) |
-| R15, R16, R17, R18, R19, R20 | 6 | 47kΩ | `0603WAF4702T5E` | UNI-ROYAL | R0603 | [C25819](https://www.lcsc.com/product-detail/C25819.html) |
+| R11 | 1 | 33Ω | `RC0603FR-0733RL` | YAGEO | R0603 | [C108661](https://www.lcsc.com/product-detail/C108661.html) |
+| R15, R16, R17, R18, R19, R20 | 6 | 47kΩ | `RC0603FR-0747KL` | YAGEO | R0603 | [C105579](https://www.lcsc.com/product-detail/C105579.html) |
 
 ## Connectors and mechanics
 
@@ -75,7 +75,7 @@ Parts fitted on the board, grouped by part type. Generated from `bom-rev1.csv`, 
 
 ## Do not fit
 
-`L1` (27 nH), `R14` (10 Ω), and `C18` (10 nF) stay on the PCB for the optional active antenna supply. They are in the placement file, so remove them if a fabricator assembles the board.
+`L1` (27 nH), `R14` (10 Ω, `RC0603FR-0710RL`, [C109318](https://www.lcsc.com/product-detail/C109318.html)), and `C18` (10 nF, `CL10B103KB8NNNC`, [C1589](https://www.lcsc.com/product-detail/C1589.html)) stay on the PCB for the optional active antenna supply. They are in the placement file, so remove them if a fabricator assembles the board.
 
 ## Not on the BOM
 
@@ -83,5 +83,11 @@ Parts fitted on the board, grouped by part type. Generated from `bom-rev1.csv`, 
 |---|---|---|
 | LP502030-PCM Li-Po battery | 1 | Connects to `J1` |
 | Mating plug for `J1` | 1 | |
+
+## Substitutions
+
+- Ceramic capacitors are all Samsung CL, chip resistors are all Yageo RC. Changed on 2026-11-09 from mixed YAGEO CC, FH and UNI-ROYAL parts with the same values, footprints and ratings. 100 nF, 1 µF, 10 µF, 1k, 5.1k, 10k and 100k are the same parts as on `marauder-c5-pancake-board` rev1 and `lmp91000-afe` v1.0. All the new parts are JLCPCB Extended parts; most replaced parts were Basic.
+- `D3` stays Hottech `BAT54WS`. LRC `LBAT54HT1G` (C12744, used on `solar-power-module-CN3722`) is electrically equivalent but has a different library footprint.
+- `placement-rev1.csv` still names the old library device in its `Device` column for the changed parts. The `Manufacturer Part` and `Supplier Part` in `bom-rev1.csv` are the parts to fit.
 
 Stock and prices were not checked.

@@ -16,6 +16,7 @@ Process: `power-pcb-design` skill (`~/.codex/skills/power-pcb-design`), adopted 
 | 9 Delivery | 2026-11-05 | Released locally at the user's request | Files are in `release/rev1`; prototype only. Not committed, shared or ordered. Ordering always needs explicit permission |
 | 9 Delivery, repeated | 2026-11-07 | Released locally at the user's request | `release/rev1` exported again after the revision of 2026-11-07. Prototype only. Not committed, shared or ordered |
 | Small revision: J3 and L1 clearance | 2026-11-07 | Approved by the user | User proposed moving R12 and D1 down, J3 down and rotating L1, then asked to move D3 away from J5 and to spread C16, C17, R13 and D3, then C5, C14 and C8 to the left. Details in "Revision of 2026-11-07" |
+| Small revision: shared passives | 2026-11-09 | Approved by the user | Passives aligned with the user's other boards. The user chose to convert the values without a match as well, and to keep D3 as Hottech BAT54WS. Details in "Revision of 2026-11-09" |
 
 Steps 1–4 were run before this process was adopted, so their gates were not held in order. They need retroactive approval.
 
@@ -102,16 +103,16 @@ Not done: no 3D model, envelope or height check.
 
 ### Component links
 
-Checked 2026-11-05. An LCSC page returning HTTP 200 does not prove that its content matches the part. Manufacturer product pages are unresolved.
+Checked 2026-11-05; rows changed by the passives revision of 2026-11-09 are marked "not opened". An LCSC page returning HTTP 200 does not prove that its content matches the part. Manufacturer product pages are unresolved.
 
 | Refs | Part | Order page | Order page check | Data sheet | Product page |
 |---|---|---|---|---|---|
 | BT1 | MS621FE-FL11E | [C80909](https://www.lcsc.com/product-detail/C80909.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/MS621FE-FL11E/82059.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | C1, C4, C16, C12 | CL10A105KB8NNNC | [C15849](https://www.lcsc.com/product-detail/C15849.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL10A105KB8NNNC/16531.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | C3 | CL21A476MQYNNNE | [C16780](https://www.lcsc.com/product-detail/C16780.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL21A476MQYNNNE/17464.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| C5, C15, C17, C8, C9, C10, C13, C14, C20 | CC0603KRX7R9BB104 | [C14663](https://www.lcsc.com/product-detail/C14663.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CC0603KRX7R9BB104/15331.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
+| C5, C15, C17, C8, C9, C10, C13, C14, C20 | CL10B104KB8NNNC | [C1591](https://www.lcsc.com/product-detail/C1591.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/CL10B104KB8NNNC/1943.html) — unchecked | unresolved |
 | C6, C7, C2, C11 | CL10A475KO8NNNC | [C19666](https://www.lcsc.com/product-detail/C19666.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL10A475KO8NNNC/20375.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| C18 | 0603B103K500NT | [C57112](https://www.lcsc.com/product-detail/C57112.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603B103K500NT/58143.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
+| C18 | CL10B103KB8NNNC | [C1589](https://www.lcsc.com/product-detail/C1589.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/CL10B103KB8NNNC/1941.html) — unchecked | unresolved |
 | C19 | CL10A106KP8NNNC | [C19702](https://www.lcsc.com/product-detail/C19702.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL10A106KP8NNNC/20411.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | D1 | KT-0603G | [C12624](https://www.lcsc.com/product-detail/C12624.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/KT-0603G/13258.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | D2 | KT-0603R | [C2286](https://www.lcsc.com/product-detail/C2286.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/KT-0603R/2659.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
@@ -122,15 +123,15 @@ Checked 2026-11-05. An LCSC page returning HTTP 200 does not prove that its cont
 | J4 | TF PUSH | [C393941](https://www.lcsc.com/product-detail/C393941.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/TF%2520PUSH/372553.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | J5 | MTP315-1107S1 | [C5142369](https://www.lcsc.com/product-detail/C5142369.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/MTP315-1107S1/5758673.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | L1 | LQG15HS27NJ02D | [C12669](https://www.lcsc.com/product-detail/C12669.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/LQG15HS27NJ02D/13305.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R2, R3 | 0603WAF2203T5E | [C22961](https://www.lcsc.com/product-detail/C22961.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603WAF2203T5E/23688.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R4, R5 | 0603WAF5101T5E | [C23186](https://www.lcsc.com/product-detail/C23186.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603WAF5101T5E/23913.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
+| R2, R3 | RC0603FR-07220KL | [C123420](https://www.lcsc.com/product-detail/C123420.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://atta.szlcsc.com/upload/public/pdf/source/20180821/C275644_0D56F95EFF785E7D9A1FEF436B37DA78.pdf) — unchecked | unresolved |
+| R4, R5 | RC0603FR-075K1L | [C105580](https://www.lcsc.com/product-detail/C105580.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-075K1L/106795.html) — unchecked | unresolved |
 | R8, R9, R10 | RC0603FR-0710KL | [C98220](https://www.lcsc.com/product-detail/C98220.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/RC0603FR-0710KL/99429.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R7, R13, R12 | 0603WAF1001T5E | [C21190](https://www.lcsc.com/product-detail/C21190.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603WAF1001T5E/21904.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R1 | 0603WAF1003T5E | [C25803](https://www.lcsc.com/product-detail/C25803.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603WAF1003T5E/26546.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R6 | 0603WAF2002T5E | [C4184](https://www.lcsc.com/product-detail/C4184.html) | not checked | not checked | unresolved |
-| R11 | 0603WAF330JT5E | [C23140](https://www.lcsc.com/product-detail/C23140.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603WAF330JT5E/23867.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R14 | 0603WAF100JT5E | [C22859](https://www.lcsc.com/product-detail/C22859.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603WAF100JT5E/23586.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R15, R16, R17, R18, R19, R20 | 0603WAF4702T5E | [C25819](https://www.lcsc.com/product-detail/C25819.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/0603WAF4702T5E/26562.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
+| R7, R13, R12 | RC0603FR-071KL | [C22548](https://www.lcsc.com/product-detail/C22548.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-071KL/23274.html) — unchecked | unresolved |
+| R1 | RC0603FR-07100KL | [C14675](https://www.lcsc.com/product-detail/C14675.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-07100KL/15343.html) — unchecked | unresolved |
+| R6 | RC0603FR-0720KL | [C105575](https://www.lcsc.com/product-detail/C105575.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0720KL/106790.html) — unchecked | unresolved |
+| R11 | RC0603FR-0733RL | [C108661](https://www.lcsc.com/product-detail/C108661.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0733RL/109880.html) — unchecked | unresolved |
+| R14 | RC0603FR-0710RL | [C109318](https://www.lcsc.com/product-detail/C109318.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0710RL/110539.html) — unchecked | unresolved |
+| R15, R16, R17, R18, R19, R20 | RC0603FR-0747KL | [C105579](https://www.lcsc.com/product-detail/C105579.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0747KL/106794.html) — unchecked | unresolved |
 | SW1 | SSSS811101 | [C109335](https://www.lcsc.com/product-detail/C109335.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/SSSS811101/110556.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | U1 | MAX-M10S-00B | [C4153167](https://www.lcsc.com/product-detail/C4153167.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/MAX-M10S-00B/4722633.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
 | U2 | STM32L412KBU6 | [C529439](https://www.lcsc.com/product-detail/C529439.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/STM32L412KBU6/549667.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
@@ -409,10 +410,41 @@ Check before the export of 2026-11-07, after the user moved designators by hand:
 
 Moving a via through the API rounded its drill from 0.30 mm to 11.8 mil (0.29972 mm), which added a drill tool. The seven moved vias were set back to 0.30 mm. The via drill file still lists two tools, both printed as 0.30000 mm.
 
+### Revision of 2026-11-09: shared passives
+
+Goal: the same value and package on this board and on the user's other boards uses the same part, so one order covers them all. Reference BOMs: `serber/marauder-c5-pancake-board` rev1, `serber/solar-power-module-CN3722` rev2 and `serber/lmp91000-afe` v1.0.
+
+| Refs | Value | Old part | New part | LCSC | Source |
+|---|---|---|---|---|---|
+| C5, C8, C9, C10, C13, C14, C15, C17, C20 | 100 nF X7R 50 V | Yageo CC0603KRX7R9BB104 | Samsung CL10B104KB8NNNC | C1591 | marauder, lmp91000-afe |
+| R1 | 100 kΩ 1 % | UNI-ROYAL 0603WAF1003T5E | Yageo RC0603FR-07100KL | C14675 | marauder |
+| R4, R5 | 5.1 kΩ 1 % | UNI-ROYAL 0603WAF5101T5E | Yageo RC0603FR-075K1L | C105580 | marauder |
+| R7, R12, R13 | 1 kΩ 1 % | UNI-ROYAL 0603WAF1001T5E | Yageo RC0603FR-071KL | C22548 | marauder, lmp91000-afe |
+| R2, R3 | 220 kΩ 1 % | UNI-ROYAL 0603WAF2203T5E | Yageo RC0603FR-07220KL | C123420 | same series, no match |
+| R6 | 20 kΩ 1 % | UNI-ROYAL 0603WAF2002T5E | Yageo RC0603FR-0720KL | C105575 | same series, no match |
+| R11 | 33 Ω 1 % | UNI-ROYAL 0603WAF330JT5E | Yageo RC0603FR-0733RL | C108661 | same series, no match |
+| R15–R20 | 47 kΩ 1 % | UNI-ROYAL 0603WAF4702T5E | Yageo RC0603FR-0747KL | C105579 | same series, no match |
+| R14 (DNF) | 10 Ω 1 % | UNI-ROYAL 0603WAF100JT5E | Yageo RC0603FR-0710RL | C109318 | same series, no match |
+| C18 (DNF) | 10 nF X7R 50 V | FH 0603B103K500NT | Samsung CL10B103KB8NNNC | C1589 | same series, no match |
+
+Already shared, unchanged: C15849 (1 µF), C19702 (10 µF), C98220 (10 kΩ), C12624 and C2286 (LEDs), C165948 (USB-C).
+
+Kept:
+- D3 stays Hottech BAT54WS (C191198), the user's choice. LRC LBAT54HT1G (C12744, solar-power-module) is equivalent, but its EasyEDA library footprint differs.
+- U5 stays ST USBLC6-2SC6 (C7519). The marauder BOM lists C323793, whose LCSC page returned "Page Not Found" on 2026-11-09.
+- 4.7 µF, 47 µF and all other parts have no match in the reference BOMs.
+
+Checks:
+- Every new part was found in the EasyEDA library by LCSC code. Its footprint UUID is the same as the old part's (R0603 or C0603), and its tolerance, dielectric, voltage and power are equal to the old ones.
+- Only the Manufacturer, Manufacturer Part, Supplier Part, Datasheet and rating attributes were changed, in place, on the 27 schematic parts and on the same 27 PCB parts. The PCB was not updated from the schematic. Positions, rotations and layers read back unchanged, still 58 parts. DRC: 0 errors.
+- The new `bom-rev1.csv` differs from the previous one only in the 9 changed lines. In `placement-rev1.csv` only the Datasheet column changed, for the 27 parts. Columns 1–17 are identical, so the Device column still names the old library device. The API export of the placement file covered a 2 × 2 panel, so only the first 58 rows (one board) were kept. The Gerbers were not exported again; copper did not change.
+- All new parts are JLCPCB Extended parts; most replaced parts were Basic. Stock and prices were not checked.
+
 ### Open items before ordering
 
 - All open audit items from step 4 still apply.
 - D4 attributes were changed in place, so the schematic and PCB parts still link to the old library device. ERC is clean; if EasyEDA warns that attributes do not match, use its device standardization or replace the device.
+- The 27 passives changed on 2026-11-09 also keep the link to their old library device. Same remedy as for D4.
 - Measure the J4 Cd switch sense and the SW1 ON direction on the first board.
 - J4 on the bottom: confirm the enclosure and the battery position leave room for the 2 mm slot and for card access.
 - J4 is soldered on the second side, by hand, after the top side.
