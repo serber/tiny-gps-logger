@@ -101,44 +101,6 @@ Pad numbers were compared with symbol pins for 20 part types, covering every IC,
 
 Not done: no 3D model, envelope or height check.
 
-### Component links
-
-Checked 2026-11-05; rows changed by the passives revision of 2026-11-09 are marked "not opened". An LCSC page returning HTTP 200 does not prove that its content matches the part. Manufacturer product pages are unresolved.
-
-| Refs | Part | Order page | Order page check | Data sheet | Product page |
-|---|---|---|---|---|---|
-| BT1 | MS621FE-FL11E | [C80909](https://www.lcsc.com/product-detail/C80909.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/MS621FE-FL11E/82059.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| C1, C4, C16, C12 | CL10A105KB8NNNC | [C15849](https://www.lcsc.com/product-detail/C15849.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL10A105KB8NNNC/16531.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| C3 | CL21A476MQYNNNE | [C16780](https://www.lcsc.com/product-detail/C16780.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL21A476MQYNNNE/17464.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| C5, C15, C17, C8, C9, C10, C13, C14, C20 | CL10B104KB8NNNC | [C1591](https://www.lcsc.com/product-detail/C1591.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/CL10B104KB8NNNC/1943.html) — unchecked | unresolved |
-| C6, C7, C2, C11 | CL10A475KO8NNNC | [C19666](https://www.lcsc.com/product-detail/C19666.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL10A475KO8NNNC/20375.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| C18 | CL10B103KB8NNNC | [C1589](https://www.lcsc.com/product-detail/C1589.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/CL10B103KB8NNNC/1941.html) — unchecked | unresolved |
-| C19 | CL10A106KP8NNNC | [C19702](https://www.lcsc.com/product-detail/C19702.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/CL10A106KP8NNNC/20411.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| D1 | KT-0603G | [C12624](https://www.lcsc.com/product-detail/C12624.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/KT-0603G/13258.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| D2 | KT-0603R | [C2286](https://www.lcsc.com/product-detail/C2286.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/KT-0603R/2659.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| D3 | BAT54WS | [C191198](https://www.lcsc.com/product-detail/C191198.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/BAT54WS/214375.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| J1 | BX-SH1.0-2PWT | [C18077908](https://www.lcsc.com/product-detail/C18077908.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/BX-SH1.0-2PWT/19218309.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| J2 | TYPE-C-31-M-12 | [C165948](https://www.lcsc.com/product-detail/C165948.html) | opens (HTTP 200); content not compared | [drawing](https://www.lcsc.com/datasheet/C165948.pdf) — land pattern compared, see step 8 | unresolved |
-| J3 | U.FL-R-SMT-1(80) | [C88374](https://www.lcsc.com/product-detail/C88374.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/U.FL-R-SMT-1(80)/89553.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| J4 | TF PUSH | [C393941](https://www.lcsc.com/product-detail/C393941.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/TF%2520PUSH/372553.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| J5 | MTP315-1107S1 | [C5142369](https://www.lcsc.com/product-detail/C5142369.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/MTP315-1107S1/5758673.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| L1 | LQG15HS27NJ02D | [C12669](https://www.lcsc.com/product-detail/C12669.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/LQG15HS27NJ02D/13305.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R2, R3 | RC0603FR-07220KL | [C123420](https://www.lcsc.com/product-detail/C123420.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://atta.szlcsc.com/upload/public/pdf/source/20180821/C275644_0D56F95EFF785E7D9A1FEF436B37DA78.pdf) — unchecked | unresolved |
-| R4, R5 | RC0603FR-075K1L | [C105580](https://www.lcsc.com/product-detail/C105580.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-075K1L/106795.html) — unchecked | unresolved |
-| R8, R9, R10 | RC0603FR-0710KL | [C98220](https://www.lcsc.com/product-detail/C98220.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/RC0603FR-0710KL/99429.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| R7, R13, R12 | RC0603FR-071KL | [C22548](https://www.lcsc.com/product-detail/C22548.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-071KL/23274.html) — unchecked | unresolved |
-| R1 | RC0603FR-07100KL | [C14675](https://www.lcsc.com/product-detail/C14675.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-07100KL/15343.html) — unchecked | unresolved |
-| R6 | RC0603FR-0720KL | [C105575](https://www.lcsc.com/product-detail/C105575.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0720KL/106790.html) — unchecked | unresolved |
-| R11 | RC0603FR-0733RL | [C108661](https://www.lcsc.com/product-detail/C108661.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0733RL/109880.html) — unchecked | unresolved |
-| R14 | RC0603FR-0710RL | [C109318](https://www.lcsc.com/product-detail/C109318.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0710RL/110539.html) — unchecked | unresolved |
-| R15, R16, R17, R18, R19, R20 | RC0603FR-0747KL | [C105579](https://www.lcsc.com/product-detail/C105579.html) | not opened; MPN, package and footprint read from the EasyEDA library on 2026-11-09 | [link](https://item.szlcsc.com/datasheet/RC0603FR-0747KL/106794.html) — unchecked | unresolved |
-| SW1 | SSSS811101 | [C109335](https://www.lcsc.com/product-detail/C109335.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/SSSS811101/110556.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| U1 | MAX-M10S-00B | [C4153167](https://www.lcsc.com/product-detail/C4153167.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/MAX-M10S-00B/4722633.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| U2 | STM32L412KBU6 | [C529439](https://www.lcsc.com/product-detail/C529439.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/STM32L412KBU6/549667.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| U3 | RT9080-33GJ5 | [C841192](https://www.lcsc.com/product-detail/C841192.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/RT9080-33GJ5/897967.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| U4 | MCP73831T-2ACI/OT | [C424093](https://www.lcsc.com/product-detail/C424093.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/MCP73831T-2ACI%252FOT/417116.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-| U5 | USBLC6-2SC6 | [C7519](https://www.lcsc.com/product-detail/C7519.html) | opens (HTTP 200); content not compared | [link](https://item.szlcsc.com/datasheet/USBLC6-2SC6/7996.html) — blocked for scripts (HTTP 405), unchecked | unresolved |
-
 ## Programming
 
 | Method | Connection | Needs | Status |
