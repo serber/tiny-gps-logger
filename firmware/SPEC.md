@@ -1,6 +1,6 @@
 # Firmware specification
 
-Draft for review. This is the separate specification promised by `docs/SPEC.md` section 5. Pins and electrical facts are in `firmware/BOARD.md`. Nothing here has been built or run yet, and nothing has been measured on hardware.
+Draft for review. This is the separate specification promised by `docs/SPEC.md` section 4. Pins and electrical facts are in `firmware/BOARD.md`. Nothing here has been built or run yet, and nothing has been measured on hardware.
 
 ## Goal
 
@@ -31,7 +31,7 @@ On each start, create a new CSV on the microSD card and append one position abou
 - Configuration is sent on every start, and after each GPS reset, with UBX-CFG-VALSET to the RAM layer: disable NMEA output on UART1, enable UBX-NAV-PVT and UBX-NAV-DOP on UART1, 1 Hz measurement rate. Check each ACK and retry. Key IDs were compared with pyubx2, not with the u-blox document.
 - 9600 baud is enough: about 126 bytes per second against 960 available. Staying at the default also means there is no baud rate to recover after a reset.
 - Nothing is stored in the module's BBR or Flash, so the module always starts from defaults.
-- `hdop` comes from UBX-NAV-DOP because UBX-NAV-PVT carries only pDOP. `docs/SPEC.md` section 5 plans NAV-PVT alone, which cannot fill this column.
+- `hdop` comes from UBX-NAV-DOP because UBX-NAV-PVT carries only pDOP. `docs/SPEC.md` section 4 plans NAV-PVT alone, which cannot fill this column.
 - A row is written after a NAV-PVT and NAV-DOP pair with the same `iTOW` has arrived.
 - If no valid UBX arrives for 5 s, pulse GPS_RESET low briefly and configure again. PB4 stays open-drain and is never driven high.
 

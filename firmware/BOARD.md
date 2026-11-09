@@ -1,6 +1,6 @@
 # Board reference for firmware
 
-What the firmware needs to know about the PCB. Pin numbers and nets were read from the EasyEDA board. Function assignments come from `docs/SPEC.md` section 9.1, checked against ST DS12469 and against the STM32CubeMX 6.18.1 pin database (`STM32L412KBUx.xml`): positions and functions of all 18 used pins match. VBAT_SENSE is ADC1_IN5 and VBUS_SENSE is ADC1_IN6. Nothing here has been measured on hardware yet.
+What the firmware needs to know about the PCB. Pin numbers and nets were read from the EasyEDA board. Function assignments come from `docs/SPEC.md` section 7.1, checked against ST DS12469 and against the STM32CubeMX 6.18.1 pin database (`STM32L412KBUx.xml`): positions and functions of all 18 used pins match. VBAT_SENSE is ADC1_IN5 and VBUS_SENSE is ADC1_IN6. Nothing here has been measured on hardware yet.
 
 ## MCU
 

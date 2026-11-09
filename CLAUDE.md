@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project
 
 Tiny battery-powered GPS logger. The project has two parts:
@@ -17,7 +15,7 @@ Application code is in `firmware/app/`, FatFs R0.16 in `firmware/third_party/fat
 
 The PCB design itself is in EasyEDA Pro, not in git: project `Tiny GPS Logger` (Board1 / Schematic1 with pages POWER, MCU, GNSS_SD / PCB1). The `docs/` and `release/` folders hold only its records:
 
-- `docs/SPEC.md`: requirements, decisions and the MCU pin map (section 9.1). Its parts table is an early key-parts list.
+- `docs/SPEC.md`: requirements, decisions and the MCU pin map (section 7.1).
 - `docs/DESIGN-RECORD.md`: gate log, audits, rules, step 6–8 decisions and evidence, and open items before ordering.
 - `release/rev1/BOM.md`: full parts list, read from the PCB.
 
