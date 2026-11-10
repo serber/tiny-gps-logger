@@ -119,7 +119,7 @@ Peaks: 200–250 mA at startup (GPS plus SD initialisation).
 The order instruction is in the [README](../README.md#ordering).
 
 - Stack-up: the RF line width is calculated for this stack, so it must be stated even though the RF line is too short (2.7 mm) to need paid impedance control. Other fabricators need the build instead of the JLC code: L1–L2 and L3–L4 prepreg 0.0994 mm, εr 4.1, core 1.265 mm.
-- ENIG: U2 has 0.5 mm pitch and U1 and J3 need flat pads. HASL is cheaper and possible, but it is uneven at this pitch.
+- Lead-free HASL: cheaper. U2 has 0.5 mm pitch and U1 and J3 sit better on flat pads, so solder them with a preheater and hot air and check for bridges. ENIG is an option at extra cost.
 - The drill files contain plated slots for J2 and non-plated holes for J2, J4 and SW1.
 
 ## 4. Firmware (preliminary, as far as it affects the hardware)

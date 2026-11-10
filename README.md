@@ -42,14 +42,14 @@ Open items: [design record](docs/DESIGN-RECORD.md#open-items-before-ordering).
 Upload [`release/rev1/gerber-rev1.zip`](release/rev1) and send:
 
 ```text
-5PCS, 4 LAYERS, FR4, 1.6MM, OUTER 1OZ, INNER 0.5OZ, STACKUP JLC04161H-3313, NO IMPEDANCE CONTROL, Purple Soldermask, White Legend, ENIG, TENTED VIAS, order number will be added
+5PCS, 4 LAYERS, FR4, 1.6MM, OUTER 1OZ, INNER 0.5OZ, STACKUP JLC04161H-3313, NO IMPEDANCE CONTROL, Purple Soldermask, White Legend, Lead-free HASL, TENTED VIAS, order number will be added
 ```
 
 | Item | Why |
 |---|---|
 | Stack-up JLC04161H-3313 | Not stored in the Gerbers, so select it. The RF line width is calculated for it. Other fabs: L1–L2 and L3–L4 prepreg 0.0994 mm, εr 4.1, core 1.265 mm |
 | No impedance control | The RF line is 2.7 mm long |
-| ENIG | U2 has 0.5 mm pitch; U1 and J3 need flat pads |
+| Lead-free HASL | Cheaper. U2 has 0.5 mm pitch: solder with a preheater and hot air, check for bridges. ENIG is an option at extra cost |
 
 ## Bill of materials
 
